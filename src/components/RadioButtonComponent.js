@@ -6,6 +6,7 @@ const RadioButtonComponent = ({value, checked, setChecked}) => {
   return (
     <View>
       <RadioButton
+        color="#000"
         value={value}
         status={checked === value ? 'checked' : 'unchecked'}
         onPress={setChecked}

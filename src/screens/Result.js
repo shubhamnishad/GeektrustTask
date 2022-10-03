@@ -42,6 +42,7 @@ const Result = props => {
       setSuccess(true);
       setResult(finalResult);
     }
+    setResult(finalResult);
     console.log('RESULT', finalResult);
   };
 
@@ -60,13 +61,17 @@ const Result = props => {
         <Text style={styles.headerFont}>Finding Falcone!</Text>
       </View>
       <View>
-        {success && (
+        {success ? (
           <View style={{justifyContent: 'center', alignItems: 'center'}}>
             <Text>
               Success! Congratulations on finding Falcone. King Shan is mighty
               pleased
             </Text>
             <Text>Planet Found: {result?.planet_name}</Text>
+          </View>
+        ) : (
+          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+            <Text>Status: {result?.status || result?.error}</Text>
           </View>
         )}
       </View>
